@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Your Name - Software Engineer</title>
+    <title>Tmpstpdwn</title>
     <style>
         /* CSS Variables for Theme Switching */
         :root {
@@ -69,12 +69,6 @@
         nav a {
             text-decoration: none;
             color: var(--text-light);
-        }
-
-        nav a.active {
-            color: var(--text-main);
-            border: 1px solid var(--border-color);
-            padding: 0.2rem 0.8rem;
         }
 
         /* Sharp Theme Switcher */
@@ -161,14 +155,12 @@
         <header>
             <div class="logo-nav">Tmpstpdwn</div>
             <nav>
-                <a href="#" class="active">home</a>
                 <button id="theme-toggle" aria-label="Toggle Dark Mode">☾</button>
             </nav>
         </header>
 
         <main>
             <h1>Suryakiran.M</h1>
-            <p class="subtitle">software engineer</p>
             
             <p class="bio">
                 Physics grad with an interest in low level systems. Interested in compilers, game engines, and the unix philosophy.
@@ -178,7 +170,7 @@
                 <div class="elsewhere-title">ELSEWHERE</div>
                 <div class="social-links">
                     <a href="https://github.com/tmpstpdwn"><span class="icon-placeholder">GH</span> github</a>
-                    <a href="https://reddit.com/u/tempestpdwn"><span class="icon-placeholder"></span> Reddit</a>
+                    <a href="https://reddit.com/u/tempestpdwn"><span class="icon-placeholder">RD</span> Reddit</a>
                     <a href="mailto:tmpstpdwn@proton.me"><span class="icon-placeholder">EM</span> email</a>
                     <a href="https://www.linkedin.com/in/srykrnm/"><span class="icon-placeholder">IN</span> linkedin</a>
                 </div>
@@ -195,7 +187,7 @@
         if (currentTheme) {
             document.documentElement.setAttribute('data-theme', currentTheme);
             if (currentTheme === 'dark') {
-                themeToggleBtn.textContent = '☀';
+                themeToggleBtn.textContent = 'L';
             }
         }
 
@@ -204,11 +196,11 @@
             if (theme === 'dark') {
                 document.documentElement.removeAttribute('data-theme');
                 localStorage.setItem('theme', 'light');
-                themeToggleBtn.textContent = '☾'; // Change to moon icon
+                themeToggleBtn.textContent = 'D';
             } else {
                 document.documentElement.setAttribute('data-theme', 'dark');
                 localStorage.setItem('theme', 'dark');
-                themeToggleBtn.textContent = '☀'; // Change to sun icon
+                themeToggleBtn.textContent = 'L';
             }
         });
     </script>
