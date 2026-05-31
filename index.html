@@ -4,21 +4,26 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tmpstpdwn</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@300;400;600&display=swap" rel="stylesheet">
+
     <style>
         /* CSS Variables for Theme Switching */
         :root {
             --bg-color: #ffffff;
             --text-main: #222222;
-            --text-muted: #888888;
-            --text-light: #cccccc;
-            --border-color: #eeeeee;
+            --text-muted: #666666; 
+            --text-light: #999999; 
+            --border-color: #cccccc; 
         }
 
         [data-theme="dark"] {
             --bg-color: #121212;
             --text-main: #eeeeee;
             --text-muted: #aaaaaa;
-            --text-light: #555555;
+            --text-light: #666666;
             --border-color: #333333;
         }
 
@@ -30,19 +35,23 @@
         }
 
         body {
-            font-family: 'Courier New', Courier, monospace; /* Monospace to match design */
+            font-family: 'Source Code Pro', monospace; 
             background-color: var(--bg-color);
             color: var(--text-main);
             transition: background-color 0.3s, color 0.3s;
             line-height: 1.6;
             display: flex;
             justify-content: center;
+            min-height: 100vh; /* Ensures body takes full screen height */
         }
 
         .container {
             width: 100%;
             max-width: 800px;
             padding: 2rem;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh; /* Matches body height */
         }
 
         /* Header / Navigation */
@@ -50,7 +59,7 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            margin-bottom: 6rem;
+            margin-bottom: 2rem; /* Reduced so main can center properly */
             padding-bottom: 2rem;
             border-bottom: 1px solid var(--border-color);
         }
@@ -58,6 +67,7 @@
         .logo-nav {
             font-size: 1rem;
             color: var(--text-light);
+            font-weight: 600;
         }
 
         nav {
@@ -75,8 +85,8 @@
         #theme-toggle {
             background: transparent;
             color: var(--text-main);
-            border: 1px solid var(--text-light);
-            border-radius: 0; /* Sharp edges */
+            border: 1px solid var(--border-color);
+            border-radius: 0; 
             padding: 0.3rem 0.6rem;
             cursor: pointer;
             font-family: inherit;
@@ -89,15 +99,24 @@
         }
 
         /* Main Content */
+        main {
+            flex: 1; /* Tells main to fill the remaining vertical space */
+            display: flex;
+            flex-direction: column;
+            justify-content: center; /* Centers the content vertically */
+            padding-bottom: 4rem; /* Slight optical adjustment so it doesn't look too low */
+        }
+
         h1 {
             font-size: 2.5rem;
-            font-weight: normal;
+            font-weight: 400; 
             margin-bottom: 0.5rem;
             color: var(--text-main);
         }
 
         .bio {
             font-size: 1rem;
+            font-weight: 300; 
             color: var(--text-muted);
             max-width: 650px;
             margin-bottom: 4rem;
@@ -126,13 +145,13 @@
             align-items: center;
             gap: 0.5rem;
             transition: color 0.2s;
+            font-weight: 400;
         }
 
         .social-links a:hover {
             color: var(--text-main);
         }
 
-        /* Recreating the bracketed icon look from the image */
         .icon-placeholder {
             display: inline-block;
             border: 1px solid var(--border-color);
@@ -149,7 +168,7 @@
         <header>
             <div class="logo-nav">Tmpstpdwn</div>
             <nav>
-                <button id="theme-toggle" aria-label="Toggle Dark Mode">☾</button>
+                <button id="theme-toggle" aria-label="Toggle Theme">D</button>
             </nav>
         </header>
 
@@ -163,10 +182,10 @@
             <section class="elsewhere">
                 <div class="elsewhere-title">ELSEWHERE</div>
                 <div class="social-links">
-                    <a href="https://github.com/tmpstpdwn"><span class="icon-placeholder">GH</span> github</a>
-                    <a href="https://reddit.com/u/tempestpdwn"><span class="icon-placeholder">RD</span> Reddit</a>
+                    <a href="https://github.com/tmpstpdwn" target="_blank"><span class="icon-placeholder">GH</span> github</a>
+                    <a href="https://reddit.com/u/tempestpdwn" target="_blank"><span class="icon-placeholder">RD</span> Reddit</a>
                     <a href="mailto:tmpstpdwn@proton.me"><span class="icon-placeholder">EM</span> email</a>
-                    <a href="https://www.linkedin.com/in/srykrnm/"><span class="icon-placeholder">IN</span> linkedin</a>
+                    <a href="https://www.linkedin.com/in/srykrnm/" target="_blank"><span class="icon-placeholder">IN</span> linkedin</a>
                 </div>
             </section>
         </main>
