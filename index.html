@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tmpstpdwn</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@300;400;600&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --bg-color: #ffffff;
+            --text-main: #222222;
+            --text-muted: #666666; 
+            --text-light: #999999; 
+            --border-color: #cccccc; 
+        }
+
+        [data-theme="dark"] {
+            --bg-color: #121212;
+            --text-main: #eeeeee;
+            --text-muted: #aaaaaa;
+            --text-light: #666666;
+            --border-color: #333333;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Source Code Pro', monospace; 
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            transition: background-color 0.3s, color 0.3s;
+            line-height: 1.6;
+            display: flex;
+            justify-content: center;
+            min-height: 100vh;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 800px;
+            padding: 2rem;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 2rem;
+            padding-bottom: 2rem;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .logo-nav {
+            font-size: 1rem;
+            color: var(--text-light);
+            font-weight: 600;
+        }
+
+        nav {
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: var(--text-light);
+        }
+
+        #theme-toggle {
+            background: transparent;
+            color: var(--text-main);
+            border: 1px solid var(--border-color);
+            border-radius: 0; 
+            padding: 0.3rem 0.6rem;
+            cursor: pointer;
+            font-family: inherit;
+            font-size: 1rem;
+            transition: all 0.2s ease;
+        }
+
+        #theme-toggle:hover {
+            border-color: var(--text-main);
+        }
+
+        main {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding-bottom: 4rem;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            font-weight: 400; 
+            margin-bottom: 0.5rem;
+            color: var(--text-main);
+        }
+
+        .bio {
+            font-size: 1rem;
+            font-weight: 300; 
+            color: var(--text-muted);
+            max-width: 650px;
+            margin-bottom: 4rem;
+            line-height: 1.8;
+        }
+
+        .elsewhere-title {
+            font-size: 0.8rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: var(--text-muted);
+            margin-bottom: 1.5rem;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .social-links a {
+            text-decoration: none;
+            color: var(--text-muted);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: color 0.2s;
+            font-weight: 400;
+        }
+
+        .social-links a:hover {
+            color: var(--text-main);
+        }
+
+        .icon-placeholder {
+            display: inline-block;
+            border: 1px solid var(--border-color);
+            padding: 0.1rem 0.3rem;
+            font-size: 0.7rem;
+            color: var(--text-light);
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <header>
+            <div class="logo-nav">Tmpstpdwn</div>
+            <nav>
+                <button id="theme-toggle" aria-label="Toggle Theme">D</button>
+            </nav>
+        </header>
+
+        <main>
+            <h1>Suryakiran.M</h1>
+            
+            <p class="bio">
+                Physics grad with an interest in low level systems. Interested in compilers, game engines, and the unix philosophy.
+            </p>
+
+            <section class="elsewhere">
+                <div class="elsewhere-title">ELSEWHERE</div>
+                <div class="social-links">
+                    <a href="https://github.com/tmpstpdwn" target="_blank"><span class="icon-placeholder">GH</span> github</a>
+                    <a href="https://reddit.com/u/tempestpdwn" target="_blank"><span class="icon-placeholder">RD</span> Reddit</a>
+                    <a href="mailto:tmpstpdwn@proton.me"><span class="icon-placeholder">EM</span> email</a>
+                    <a href="https://www.linkedin.com/in/srykrnm/" target="_blank"><span class="icon-placeholder">IN</span> linkedin</a>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script>
+        const themeToggleBtn = document.getElementById('theme-toggle');
+        const currentTheme = localStorage.getItem('theme');
+
+        if (currentTheme) {
+            document.documentElement.setAttribute('data-theme', currentTheme);
+            if (currentTheme === 'dark') {
+                themeToggleBtn.textContent = 'L';
+            }
+        }
+
+        themeToggleBtn.addEventListener('click', () => {
+            let theme = document.documentElement.getAttribute('data-theme');
+            if (theme === 'dark') {
+                document.documentElement.removeAttribute('data-theme');
+                localStorage.setItem('theme', 'light');
+                themeToggleBtn.textContent = 'D';
+            } else {
+                document.documentElement.setAttribute('data-theme', 'dark');
+                localStorage.setItem('theme', 'dark');
+                themeToggleBtn.textContent = 'L';
+            }
+        });
+    </script>
+</body>
+</html>
