@@ -1,0 +1,258 @@
+@import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@300;400;600&display=swap');
+
+:root {
+    --bg-color: #ffffff;
+    --text-main: #222222;
+    --text-muted: #666666;
+    --text-light: #999999;
+    --border-color: #cccccc;
+}
+
+[data-theme="dark"] {
+    --bg-color: #121212;
+    --text-main: #eeeeee;
+    --text-muted: #aaaaaa;
+    --text-light: #666666;
+    --border-color: #333333;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Source Code Pro', monospace;
+    background-color: var(--bg-color);
+    color: var(--text-main);
+    transition: background-color 0.2s, color 0.2s;
+    line-height: 1.6;
+    display: flex;
+    justify-content: center;
+    min-height: 100vh;
+}
+
+.container {
+    width: 100%;
+    max-width: 800px;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+main {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 4rem;
+}
+
+main.main-centered {
+    justify-content: center;
+}
+
+/* Header */
+header {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid var(--border-color);
+    margin-bottom: 2rem;
+}
+
+header > div:first-child {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+nav {
+    display: flex;
+    gap: 2rem;
+    justify-content: center;
+}
+
+.logo-nav, nav a {
+    text-decoration: none;
+    color: var(--text-light);
+    font-weight: 600;
+    transition: color 0.2s;
+}
+
+.logo-nav {
+    font-size: 1.5rem;
+}
+
+nav a {
+    font-size: 1.2rem;
+}
+
+nav a.active {
+    color: var(--text-muted);
+}
+
+.logo-nav:hover, nav a:hover, nav a.active:hover {
+    color: var(--text-main);
+}
+
+#theme-toggle {
+    background: transparent;
+    color: var(--text-light);
+    border: 1px solid var(--text-light);
+    padding: 0.3rem 0.6rem;
+    cursor: pointer;
+    font-family: inherit;
+    font-size: 1.1rem;
+    transition: all 0.2s ease;
+}
+
+#theme-toggle:hover {
+    color: var(--text-main);
+    border-color: var(--text-main);
+}
+
+/* Home page */
+h1 {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.bio {
+    font-size: 1.1rem;
+    color: var(--text-muted);
+    max-width: 650px;
+    margin-bottom: 4rem;
+    line-height: 1.8;
+}
+
+.elsewhere-title {
+    font-size: 1rem;
+    letter-spacing: 2px;
+    color: var(--text-light);
+    margin-bottom: 1rem;
+}
+
+.social-links {
+    display: flex;
+    column-gap: 2rem;
+    row-gap: 0.2rem;
+    flex-wrap: wrap;
+}
+
+.social-links a {
+    text-decoration: none;
+    color: var(--text-light);
+    transition: color 0.2s, opacity 0.3s ease;
+    font-size: 1.1rem;
+}
+
+.social-links a:hover {
+    color: var(--text-main);
+}
+
+/* Tags */
+#tag-filters {
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+    margin-bottom: 2rem;
+}
+
+.tag-filter {
+    background: transparent;
+    border: 1px solid var(--border-color);
+    padding: 0.3rem 0.6rem;
+    color: var(--text-light);
+    cursor: pointer;
+    font-family: inherit;
+    font-size: 1rem;
+    transition: all 0.2s;
+}
+
+.tag-filter:hover {
+    border-color: var(--text-muted);
+    color: var(--text-muted);
+}
+
+.tag-filter.active {
+    border-color: var(--text-main);
+    color: var(--text-main);
+}
+
+.tags {
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+    margin-bottom: 1rem;
+}
+
+/* Projects */
+#projects-container {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.project-card {
+    border: 1px solid var(--border-color);
+    padding: 1.5rem;
+    transition: border-color 0.2s;
+}
+
+.project-card:hover {
+    border-color: var(--text-main);
+}
+
+.project-card h2 {
+    font-size: 1.2rem;
+    margin: 0 0 0.5rem 0;
+    color: var(--text-main);
+}
+
+.project-card a {
+    text-decoration: none;
+    color: var(--text-main);
+}
+
+.project-card p {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+    margin-bottom: 1rem;
+}
+
+.project-card .tag {
+    background: transparent;
+    border: 1px solid var(--border-color);
+    padding: 0.3rem 0.6rem;
+    color: var(--text-light);
+    font-family: inherit;
+    font-size: 0.8rem;
+}
+
+.project-links {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.project-links a {
+    text-decoration: none;
+    color: var(--text-light);
+    transition: color 0.2s;
+}
+
+.project-links a:hover {
+    color: var(--text-main);
+}
+
+/* Nothing to see */
+.nothin-to-see {
+    text-align: center;
+    margin: 0 auto;
+    color: var(--text-light);
+    font-size: 1rem;
+}
