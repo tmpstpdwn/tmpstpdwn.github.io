@@ -1,3 +1,13 @@
 {
-  "projects": []
+  "projects": [
+    {
+      "title": "cTetris",
+      "description": "Minimal Tetris implementation in C and Raylib.",
+      "tags": ["C", "Raylib", "Game"],
+      "links": [
+        { "label": "Repo", "url": "https://github.com/tmpstpdwn/cTetris" },
+        { "label": "Play", "url": "https://tmpstpdwn.github.io/cTetris" }
+      ]
+    }
+  ]
 }
